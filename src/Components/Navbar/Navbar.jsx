@@ -23,7 +23,7 @@ const Navbar = () => {
           <a href="#">About us</a>
         </li>
         <li>
-          <a href="#">Our Services</a>
+          <a href="#">Worship</a>
         </li>
         <li>
           <a href="#">Contact</a>

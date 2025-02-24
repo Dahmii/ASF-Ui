@@ -14,7 +14,7 @@ const Hero = () => {
         <p>
           Nothing can be compared to the love of Jesus. For God so loved the
           world that he gace his one and only son, that whoever believes in him
-          shall not perish but hvae eternal life.
+          shall not perish but have eternal life.
         </p>
       </div>
 
