@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Navbar.css";
-import logo from "../../../public/img/adventist-en-centered--black.png";
+import logo from "../../../public/img/adventist-symbol--black.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
