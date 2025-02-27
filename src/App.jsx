@@ -3,6 +3,8 @@ import Navbar from "./Components/Navbar/Navbar";
 import Hero from "./Components/Hero/Hero";
 import Join from "./Components/Join/Join";
 import Banner from "./Components/Banner/Banner";
+import Footer from "./Components/Footer/Footer";
+import Miracles from "./Components/Hero/Miracles";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Hero />
       <Join />
       <Banner />
+      <Miracles />
+      <Footer />
     </div>
   );
 }
