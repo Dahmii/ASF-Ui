@@ -16,7 +16,7 @@ const Banner = () => {
         </h1>
         <p>at 8:30 AM</p>
         <p>
-          <a href="#">Online</a> or in person
+          in person or <a href="#">Online</a>
         </p>
       </div>
     </section>
