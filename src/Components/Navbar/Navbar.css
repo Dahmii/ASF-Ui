@@ -55,12 +55,17 @@ nav.scrolled .logo img {
 .nav-menu li a {
   display: block;
   text-decoration: none;
-  color: #222;
+  color: #9c9c9c;
   font-size: 18px;
   font-weight: bold;
   font-family: "Lato", serif;
   padding: 20px 0;
   transition: color 0.3s ease;
+  padding: 0 15px;
+}
+
+nav ul li a:not(:last-child) {
+  padding-right: 15px;
 }
 
 .nav-menu li a:hover {

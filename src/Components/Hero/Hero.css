@@ -17,9 +17,14 @@
 .hero-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 1200px;
-  margin: 120px 0 60px;
+  align-items: flex-start;
+  text-align: left;
+  /* height: 100vh; */
+  width: 80vw;
+  padding: 20px;
+  max-width: 100%;
+  margin: 120px;
+  margin-bottom: 20px;
   color: #333;
 }
 
@@ -41,7 +46,7 @@
   font-family: "Lato", serif;
   font-size: 18px;
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   color: #555;
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./Footer.css";
+import { FaFacebook, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import logo from "../../../public/img/adventist-symbol--black.svg";
 import { Fade } from "react-awesome-reveal";
 
@@ -7,7 +8,7 @@ const Footer = () => {
   return (
     <section className="footer-container">
       <Fade duration={3000}>
-        <hr />
+        {/* <hr /> */}
         <div className="footer-content">
           <div className="footer-text">
             <h1>
@@ -33,29 +34,40 @@ const Footer = () => {
           </div>
 
           <div className="socials">
-            <ul>
+            <ul
+              style={{
+                display: "flex",
+                gap: "15px",
+                listStyle: "none",
+                padding: 0,
+                marginTop: "-30px",
+              }}
+            >
               <li>
-                <a href="#">Facebook</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <FaFacebook size={30} color="#ebebeb" />
+                </a>
               </li>
               <li>
-                <a href="#">Instagram</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram size={30} color="#ebebeb" />
+                </a>
               </li>
               <li>
-                <a href="#">Youtube</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <FaYoutube size={30} color="#ebebeb" />
+                </a>
               </li>
               <li>
-                <a href="#">X</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">
+                  <FaTwitter size={30} color="#ebebeb" />
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="footer-note">
-          {/* <img
-            src={logo}
-            alt="Seventh-day Adventist Church Logo"
-            className="footer-logo"
-          /> */}
           <p>
             © {new Date().getFullYear()} Seventh-day Adventist Church, Okebola.
             All Rights Reserved.
