@@ -1,34 +1,82 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../../../public/img/adventist-symbol--black.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Add scroll event listener to apply different styles when scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listener
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuOpen && !event.target.closest("nav")) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [menuOpen]);
 
   return (
-    <nav>
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-      </div>
+    <nav className={scrolled ? "scrolled" : ""}>
+      <div className="nav-container">
+        <div className="logo">
+          <img src={logo} alt="Adventist Logo" />
+        </div>
 
-      <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </div>
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle navigation menu"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
 
-      <ul className={menuOpen ? "active" : ""}>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">About us</a>
-        </li>
-        <li>
-          <a href="#">Worship</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-      </ul>
+        <ul className={`nav-menu ${menuOpen ? "active" : ""}`}>
+          <li>
+            <a href="#" onClick={() => setMenuOpen(false)}>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#about" onClick={() => setMenuOpen(false)}>
+              About us
+            </a>
+          </li>
+          <li>
+            <a href="#worship" onClick={() => setMenuOpen(false)}>
+              Worship
+            </a>
+          </li>
+          <li>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };

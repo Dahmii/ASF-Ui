@@ -51,11 +51,11 @@ const Footer = () => {
         </div>
 
         <div className="footer-note">
-          <img
+          {/* <img
             src={logo}
             alt="Seventh-day Adventist Church Logo"
             className="footer-logo"
-          />
+          /> */}
           <p>
             © {new Date().getFullYear()} Seventh-day Adventist Church, Okebola.
             All Rights Reserved.
