@@ -50,6 +50,11 @@
   color: #555;
 }
 
+.hero-subtitle span {
+  font-family: "Lato", serif;
+  font-style: italic;
+}
+
 .hero-heading {
   font-family: "Poppins", serif;
   font-weight: 700;
@@ -67,7 +72,7 @@
   color: #555;
 }
 
-.hero-text span {
+.hero-heading span {
   font-family: "Petit Formal Script", serif;
   font-style: italic;
   color: #525151;
