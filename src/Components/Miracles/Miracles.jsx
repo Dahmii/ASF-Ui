@@ -1,10 +1,10 @@
 import React from "react";
-import "./Hero.css";
+import "./Miracles.css";
 import { Fade } from "react-awesome-reveal";
 
 const Miracles = () => {
   return (
-    <section className="hero-container">
+    <section className="miracle-container">
       <Fade duration={3000}>
         <div className="miracle-text">
           <h1>
