@@ -40,7 +40,7 @@ const Footer = () => {
                 gap: "15px",
                 listStyle: "none",
                 padding: 0,
-                marginTop: "-30px",
+                marginTop: "15px",
               }}
             >
               <li>

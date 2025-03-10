@@ -10,7 +10,7 @@ nav {
   justify-content: center;
   padding: 0 5%;
   background-color: #ebebeb;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); */
   position: fixed;
   width: 100%;
   top: 0;
@@ -22,7 +22,7 @@ nav {
 nav.scrolled {
   padding: 10px 5%;
   background-color: #ebebeb;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .nav-container {
@@ -144,6 +144,9 @@ nav ul li a:not(:last-child) {
 
 /* For even smaller screens */
 @media (max-width: 480px) {
+  .nav-container {
+    margin: 0 30px;
+  }
   .logo img {
     width: 60px;
   }
@@ -153,7 +156,7 @@ nav ul li a:not(:last-child) {
   }
 
   .nav-menu li a {
-    font-size: 16px;
+    font-size: 14px;
     padding: 12px 20px;
   }
 }
