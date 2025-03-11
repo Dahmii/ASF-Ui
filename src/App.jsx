@@ -10,7 +10,7 @@ import Footer from "./Components/Footer/Footer";
 import Hero from "./Components/Hero/Hero";
 import Join from "./Components/Join/Join";
 import Banner from "./Components/Banner/Banner";
-import Miracles from "./Components/Hero/Miracles";
+import Miracles from "./Components/Miracles/Miracles";
 import NotFound from "./Pages/NotFound/NotFound";
 
 function Home() {

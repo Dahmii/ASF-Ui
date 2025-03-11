@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { useSprings, animated } from "@react-spring/web";
+import "./BlurText.css";
 
 const BlurText = ({
   text = "",
@@ -86,12 +87,11 @@ const BlurText = ({
       {springs.map((props, index) => (
         <animated.span
           key={index}
+          className="blur-text-span"
           style={{
             ...props,
             display: "inline-block",
             willChange: "transform, filter, opacity",
-            fontSize: "70px",
-            fontWeight: "700",
           }}
         >
           {elements[index] === " " ? "\u00A0" : elements[index]}
