@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./modal.css";
+import "./Modal.css";
 
 const Modal = () => {
   const [isOpen, setIsOpen] = useState(true); // Open modal when page loads
