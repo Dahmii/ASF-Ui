@@ -12,10 +12,12 @@ import Join from "./Components/Join/Join";
 import Banner from "./Components/Banner/Banner";
 import Miracles from "./Components/Miracles/Miracles";
 import NotFound from "./Pages/NotFound/NotFound";
+import Modal from "./Components/Modal/Modal";
 
 function Home() {
   return (
     <>
+      <Modal />
       <Hero />
       <Join />
       <Banner />
@@ -26,13 +28,21 @@ function Home() {
 
 function Layout({ children }) {
   const location = useLocation();
-  const hideNavFooter = location.pathname === "/NotFound";
+  // Check if the current path should display the NotFound page
+  const is404Page =
+    location.pathname !== "/" && !location.pathname.startsWith("/home");
 
+  // Don't render the layout components for 404 pages
+  if (is404Page) {
+    return <NotFound />;
+  }
+
+  // Regular layout for valid routes
   return (
     <>
-      {!hideNavFooter && <Navbar />}
+      <Navbar />
       {children}
-      {!hideNavFooter && <Footer />}
+      <Footer />
     </>
   );
 }
@@ -43,7 +53,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="*" element={<NotFound />} />
+          {/* Add any other valid routes here */}
+          {/* No need for a catch-all route here as Layout handles it */}
         </Routes>
       </Layout>
     </Router>

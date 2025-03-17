@@ -1,0 +1,313 @@
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;800&display=swap");
+
+.notfound-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2em;
+  padding: 1rem;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  background-color: black;
+  background-image: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.2) 1px,
+    transparent 1px
+  );
+  background-size: 1rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.notfound-container .column {
+  flex: 1;
+  padding: 1rem;
+  justify-content: space-between;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.notfound-container .error-line {
+  color: #fff;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  animation: bounceIn 1s ease-out forwards;
+}
+
+.notfound-container .error-code {
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-size: clamp(2rem, 16vw, 14rem);
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  text-align: center;
+  color: #fff;
+  line-height: 1;
+  opacity: 0;
+  animation: bounceIn 1s ease-out forwards;
+}
+
+.notfound-container .error-message {
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  padding: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: clamp(1rem, 1vw, 10rem);
+  font-style: normal;
+  text-align: center;
+  color: #fff;
+  margin-top: 0.1rem;
+  opacity: 0;
+  animation: bounceIn 1s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.notfound-container .back-button {
+  background: linear-gradient(135deg, #ff4d4d, #ff7777);
+  color: white;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(255, 77, 77, 0.5);
+}
+
+.notfound-container .back-button a {
+  color: white;
+  text-decoration: none;
+}
+
+.notfound-container .back-button:hover {
+  background: linear-gradient(135deg, #ff7777, #ff4d4d);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(255, 77, 77, 0.7);
+}
+
+.notfound-container .back-button:active {
+  transform: scale(0.98);
+  box-shadow: 0px 2px 8px rgba(255, 77, 77, 0.4);
+}
+
+.notfound-container .glow-red {
+  filter: drop-shadow(0 0 10px #ff3333) drop-shadow(0 0 30px #ff7777);
+  animation: brainGlowRed 2s ease-in-out infinite;
+}
+
+.notfound-container .glow-green {
+  filter: drop-shadow(0 0 10px #90e140) drop-shadow(0 0 30px #90e140);
+  animation: brainGlowGreen 2s ease-in-out infinite;
+}
+
+.notfound-container .column.left,
+.notfound-container .column.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.notfound-container .speech-bubble {
+  position: relative;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.8);
+  margin: auto;
+  padding: 1.5em;
+  max-width: 15vw;
+  border-radius: 3em;
+  text-align: center;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(1rem, 0.8vw, 5rem);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.notfound-container .speech-bubble.active {
+  opacity: 1;
+  transform: scale(1);
+  animation: brainPulse 3s ease-in-out infinite;
+}
+
+.notfound-container .speech-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -1em;
+  width: 1.5em;
+  height: 2em;
+  background: inherit;
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  transform: scale(2);
+}
+
+.notfound-container .left .speech-bubble {
+  background: #ff4d4d;
+  color: black;
+}
+
+.notfound-container .left .speech-bubble::after {
+  background: #ff4d4d;
+  right: 2.5em;
+  transform: rotate(-45deg);
+}
+
+.notfound-container .right .speech-bubble {
+  background: #90e140;
+  color: black;
+}
+
+.notfound-container .right .speech-bubble::after {
+  background: #90e140;
+  left: 2.5em;
+  transform: rotate(45deg);
+}
+
+/* @keyframes brainPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+} */
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes popFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* @keyframes brainGlowRed {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(255, 77, 77, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(255, 77, 77, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(255, 77, 77, 0.3));
+  }
+}
+
+@keyframes brainGlowGreen {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(144, 225, 64, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 30px rgba(144, 225, 64, 1));
+  }
+  100% {
+    filter: drop-shadow(0 0 0px rgba(144, 225, 64, 0.3));
+  }
+} */
+
+@media (max-width: 768px) {
+  .notfound-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensures it fills the screen properly */
+    overflow: hidden; /* Prevents content from going out of bounds */
+  }
+
+  .notfound-container .column {
+    flex: unset; /* Prevents equal distribution */
+    max-height: 45vh; /* Ensures each column stays within the viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .notfound-container .speech-bubble {
+    max-width: 60vw;
+    font-size: clamp(0.9rem, 2.5vw, 5rem);
+    padding: 1rem;
+  }
+
+  .notfound-container .left .speech-bubble::after,
+  .notfound-container .right .speech-bubble::after {
+    bottom: -0.5em; /* Adjust tail positioning */
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .notfound-container {
+    padding: 1rem;
+    height: 100vh; /* Ensures full-screen coverage */
+  }
+
+  .notfound-container .column {
+    max-height: 40vh;
+    justify-content: center;
+  }
+
+  .notfound-container .speech-bubble {
+    max-width: 75vw;
+    padding: 1rem;
+  }
+}
