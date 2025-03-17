@@ -6,4 +6,5 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  base: process.env.VITE_BASE_PATH || "/ASF-Ui",
 });
