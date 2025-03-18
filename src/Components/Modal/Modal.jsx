@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Modal.css";
+import promotion from "../../assets/images/test.jpeg";
 
 const Modal = () => {
   const [isOpen, setIsOpen] = useState(true); // Open modal when page loads
@@ -27,11 +28,7 @@ const Modal = () => {
         <span className="close" onClick={closeModal}>
           &times;
         </span>
-        <img
-          src="src\assets\images\test.jpeg"
-          alt="Promotions"
-          className="modal-img"
-        />
+        <img src={promotion} alt="Promotion" className="modal-img" />
       </div>
     </div>
   );
