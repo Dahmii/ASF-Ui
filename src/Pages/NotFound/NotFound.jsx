@@ -30,8 +30,8 @@ const NotFound = () => {
       setActiveBubble(null);
       setTimeout(() => {
         showBubble(index + 1);
-      }, 4000);
-    }, 8000);
+      }, 2000);
+    }, 4000);
   };
 
   const getBubbleClassName = (bubbleIndex) => {
