@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
@@ -27,17 +22,6 @@ function Home() {
 }
 
 function Layout({ children }) {
-  const location = useLocation();
-  // Check if the current path should display the NotFound page
-  const is404Page =
-    location.pathname !== "/" && !location.pathname.startsWith("/home");
-
-  // Don't render the layout components for 404 pages
-  if (is404Page) {
-    return <NotFound />;
-  }
-
-  // Regular layout for valid routes
   return (
     <>
       <Navbar />
@@ -53,8 +37,8 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* Add any other valid routes here */}
-          {/* No need for a catch-all route here as Layout handles it */}
+          {/* Other valid routes should be added here */}
+          <Route path="*" element={<NotFound />} /> {/* Catch-all 404 route */}
         </Routes>
       </Layout>
     </Router>
