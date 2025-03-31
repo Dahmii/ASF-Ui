@@ -12,7 +12,7 @@ const NotFound = () => {
     }
     const startTimeout = setTimeout(() => {
       showBubble(0);
-    }, 6000);
+    }, 4000);
 
     return () => clearTimeout(startTimeout);
   }, []);
@@ -31,7 +31,7 @@ const NotFound = () => {
       setTimeout(() => {
         showBubble(index + 1);
       }, 2000);
-    }, 4000);
+    }, 3700);
   };
 
   const getBubbleClassName = (bubbleIndex) => {
@@ -51,14 +51,14 @@ const NotFound = () => {
         <div className={getBubbleClassName(8)}>Are you feeling alone?</div>
       </div>
       <div className="column middle">
-        <p className="error-line">you have lost your way</p>
+        <p className="error-line">have you lost your way?</p>
         <div className="error-code">404</div>
         <div className="error-message">
           <p>Quick! Find your way back to Jesus!</p>
-          <p>
-            For all have sinned and fall short of the glory of God, being
+          <p className="bible-text">
+            "For all have sinned and fall short of the glory of God, being
             justified freely by His grace through the redemption that is in
-            Christ Jesus.
+            Christ Jesus."
           </p>
         </div>
         <button className="back-button">
